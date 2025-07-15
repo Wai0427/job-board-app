@@ -26,7 +26,10 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return response()->json(['message' => 'Registered successfully'], 201);
+        return response()->json([
+            'message' => 'Registered successfully',
+            'user' => $user,
+        ], 201);
     }
 
     public function login(Request $request) {
@@ -50,7 +53,16 @@ class AuthController extends Controller
     }
 
     public function logout(Request $request) {
-        $request->user()->currentAccessToken()->delete();
-        return response()->json(['message' => 'Logged out']);
+        $user = $request->user();
+        
+        $user->currentAccessToken()->delete();
+        return response()->json([
+        'success' => true,
+        'message' => 'Logout successful',
+        'user' => [
+            'id' => $user->id,
+            'email' => $user->email,
+        ],
+    ]);
     }
 }
