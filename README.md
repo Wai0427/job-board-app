@@ -37,7 +37,10 @@ mini-job-board/
 ### Backend (Laravel)
 1. Go to the `backend/` directory
 2. Copy `.env.example` to `.env` and update DB credentials (*If using Laravel 12, can direct use sqlite for quick test on Apps)
-3. Run below commands
+3. Make sure below code are in the .env file:
+    SANCTUM_STATEFUL_DOMAINS=localhost
+    SESSION_DOMAIN=localhost
+4. Run below commands
     **seed commands to generate an account for each employer and applicant role to quick test
     ** - Employer account (Email: emp@gmail.com, Password: 123)
     ** - Applicant account (Email: app@gmail.com, Password: 123)
