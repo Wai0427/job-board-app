@@ -6,13 +6,13 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
-import Jobs from './pages/Jobs';
-import JobDetails from './pages/JobDetails';
-import JobForm from './pages/JobForm';
-import ApplicantsList from './pages/ApplicantsList';
-import JobLists from './pages/JobLists';
-import EmployerJobs from './pages/EmployerJobs';
-import MyApplications from './pages/MyApplications';
+import Jobs from './pages/applicants/Jobs'; //
+import JobDetails from './pages/applicants/JobDetails';
+import MyApplications from './pages/applicants/MyApplications';
+import JobForm from './pages/employers/JobForm';//
+import ApplicantsList from './pages/employers/ApplicantsList';
+import JobLists from './pages/employers/JobLists';
+import EmployerJobs from './pages/employers/EmployerJobs';
 
 
 // Wrapper to handle conditional redirect for '/', '/login'

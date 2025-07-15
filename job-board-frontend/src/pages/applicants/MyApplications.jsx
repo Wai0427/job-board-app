@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // import navigate
-import api from "../api/axios";
+import api from "../../api/axios";
 
 export default function MyApplications() {
   const [applications, setApplications] = useState([]);
