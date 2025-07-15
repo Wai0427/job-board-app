@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "7fc672ed-3947-4dd9-8904-57362291e5f2",
-		"name": "Mini Job Board (Employer)",
+		"name": "Mini Job Board",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "46707149"
 	},
@@ -12,98 +12,1142 @@
 				{
 					"name": "login",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"emtest@gmail.com\",\r\n  \"password\": \"emtest123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"emtest@gmail.com\",\r\n  \"password\": \"emtest123\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:15:57 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"31|LjrIW2Nu2UOHsS9HghKPL96hM18BonEvjaJyILLq4c22acaf\",\n    \"user\": {\n        \"id\": 12,\n        \"name\": \"emtest\",\n        \"email\": \"emtest@gmail.com\",\n        \"role\": \"employer\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2025-07-15T12:13:45.000000Z\",\n        \"updated_at\": \"2025-07-15T12:13:45.000000Z\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "employer_user_info",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "employer_user_info",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:19:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 12,\n    \"name\": \"emtest\",\n    \"email\": \"emtest@gmail.com\",\n    \"role\": \"employer\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2025-07-15T12:13:45.000000Z\",\n    \"updated_at\": \"2025-07-15T12:13:45.000000Z\"\n}"
+						}
+					]
 				},
 				{
 					"name": "employer_joblist",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/employer/jobs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employer",
+								"jobs"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "employer_joblist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/employer/jobs",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"employer",
+										"jobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:20:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						}
+					]
 				},
 				{
-					"name": "employer_post_job",
+					"name": "employer_post_published_job",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Laravel Job\" ,\r\n    \"description\" : \"Minimun 1 year experience in frontend framework with Laravel backend\", \r\n    \"location\" : \"Kuala Lumpur\",\r\n    \"salary_range\" : \"5000-7000\",\r\n    \"is_remote\" : true,\r\n    \"status\" : \"published\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/jobs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobs"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "employer_post_job",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"Laravel Job\" ,\r\n    \"description\" : \"Minimun 1 year experience in frontend framework with Laravel backend\", \r\n    \"location\" : \"Kuala Lumpur\",\r\n    \"salary_range\" : \"5000-7000\",\r\n    \"is_remote\" : true,\r\n    \"status\" : \"published\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/jobs",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"jobs"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:27:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Job created successfully\",\n    \"job\": {\n        \"title\": \"Laravel Job\",\n        \"description\": \"Minimun 1 year experience in frontend framework with Laravel backend\",\n        \"location\": \"Kuala Lumpur\",\n        \"salary_range\": \"5000-7000\",\n        \"is_remote\": true,\n        \"status\": \"published\",\n        \"user_id\": 12,\n        \"updated_at\": \"2025-07-15T12:27:03.000000Z\",\n        \"created_at\": \"2025-07-15T12:27:03.000000Z\",\n        \"id\": 5\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "employer_post_draft_job",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"React Developer\" ,\r\n    \"description\" : \"Minimun 1 year experience in React framework, familiar with RestfulAPI\", \r\n    \"location\" : \"Selangor\",\r\n    \"salary_range\" : \"4500-6000\",\r\n    \"is_remote\" : true,\r\n    \"status\" : \"draft\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/jobs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"React Developer\" ,\r\n    \"description\" : \"Minimun 1 year experience in React framework, familiar with RestfulAPI\", \r\n    \"location\" : \"Selangor\",\r\n    \"salary_range\" : \"4500-6000\",\r\n    \"is_remote\" : true,\r\n    \"status\" : \"draft\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/jobs",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"jobs"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:31:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Job created successfully\",\n    \"job\": {\n        \"title\": \"React Developer\",\n        \"description\": \"Minimun 1 year experience in React framework, familiar with RestfulAPI\",\n        \"location\": \"Selangor\",\n        \"salary_range\": \"4500-6000\",\n        \"is_remote\": true,\n        \"status\": \"draft\",\n        \"user_id\": 12,\n        \"updated_at\": \"2025-07-15T12:31:13.000000Z\",\n        \"created_at\": \"2025-07-15T12:31:13.000000Z\",\n        \"id\": 6\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "employer_joblist_after_newpost",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/employer/jobs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employer",
+								"jobs"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "employer_joblist_after_newpost",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/employer/jobs",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"employer",
+										"jobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:31:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 6,\n        \"user_id\": 12,\n        \"title\": \"React Developer\",\n        \"description\": \"Minimun 1 year experience in React framework, familiar with RestfulAPI\",\n        \"location\": \"Selangor\",\n        \"salary_range\": \"4500-6000\",\n        \"is_remote\": 1,\n        \"status\": \"draft\",\n        \"created_at\": \"2025-07-15T12:31:13.000000Z\",\n        \"updated_at\": \"2025-07-15T12:31:13.000000Z\"\n    },\n    {\n        \"id\": 5,\n        \"user_id\": 12,\n        \"title\": \"Laravel Job\",\n        \"description\": \"Minimun 1 year experience in frontend framework with Laravel backend\",\n        \"location\": \"Kuala Lumpur\",\n        \"salary_range\": \"5000-7000\",\n        \"is_remote\": 1,\n        \"status\": \"published\",\n        \"created_at\": \"2025-07-15T12:27:03.000000Z\",\n        \"updated_at\": \"2025-07-15T12:27:03.000000Z\"\n    }\n]"
+						}
+					]
 				},
 				{
-					"name": "edit_jobId_4",
+					"name": "edit_job_ID_5",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Full-Stack Developer\" ,\r\n    \"description\" : \"Minimun 2 year experience in frontend framework with Laravel backend\", \r\n    \"location\" : \"Johor\",\r\n    \"salary_range\" : \"6000-9000\",\r\n    \"is_remote\" : true,\r\n    \"status\" : \"published\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/jobs/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobs",
+								"5"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "edit_job_ID_5",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"Full-Stack Developer\" ,\r\n    \"description\" : \"Minimun 2 year experience in frontend framework with Laravel backend\", \r\n    \"location\" : \"Johor\",\r\n    \"salary_range\" : \"6000-9000\",\r\n    \"is_remote\" : true,\r\n    \"status\" : \"published\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/jobs/5",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"jobs",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:34:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Job updated successfully\",\n    \"job\": {\n        \"id\": 5,\n        \"user_id\": 12,\n        \"title\": \"Full-Stack Developer\",\n        \"description\": \"Minimun 2 year experience in frontend framework with Laravel backend\",\n        \"location\": \"Johor\",\n        \"salary_range\": \"6000-9000\",\n        \"is_remote\": true,\n        \"status\": \"published\",\n        \"created_at\": \"2025-07-15T12:27:03.000000Z\",\n        \"updated_at\": \"2025-07-15T12:34:42.000000Z\"\n    }\n}"
+						}
+					]
 				},
 				{
-					"name": "delete_jobId3",
+					"name": "delete_job_ID_6",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/jobs/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobs",
+								"6"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "delete_job_ID_6",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/jobs/6",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"jobs",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:35:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Job deleted\"\n}"
+						}
+					]
 				},
 				{
 					"name": "show_employer_joblist_after_delete+edit",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/employer/jobs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employer",
+								"jobs"
+							]
+						}
 					},
-					"response": []
-				},
-				{
-					"name": "view_specific_jobID",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "view_specific_job_with_applicantmessage",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
+					"response": [
+						{
+							"name": "show_employer_joblist_after_delete+edit",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/employer/jobs",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"employer",
+										"jobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:37:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 5,\n        \"user_id\": 12,\n        \"title\": \"Full-Stack Developer\",\n        \"description\": \"Minimun 2 year experience in frontend framework with Laravel backend\",\n        \"location\": \"Johor\",\n        \"salary_range\": \"6000-9000\",\n        \"is_remote\": 1,\n        \"status\": \"published\",\n        \"created_at\": \"2025-07-15T12:27:03.000000Z\",\n        \"updated_at\": \"2025-07-15T12:34:42.000000Z\"\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "published_job_with_applicant_count",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/employer/jobs-with-applicants",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employer",
+								"jobs-with-applicants"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "published_job_with_applicant_count",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/employer/jobs-with-applicants",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"employer",
+										"jobs-with-applicants"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:59:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 5,\n        \"user_id\": 12,\n        \"title\": \"Full-Stack Developer\",\n        \"description\": \"Minimun 2 year experience in frontend framework with Laravel backend\",\n        \"location\": \"Johor\",\n        \"salary_range\": \"6000-9000\",\n        \"is_remote\": 1,\n        \"status\": \"published\",\n        \"created_at\": \"2025-07-15T12:27:03.000000Z\",\n        \"updated_at\": \"2025-07-15T12:34:42.000000Z\",\n        \"applications_count\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "view_specific_job_with_applicantmessage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/jobs/5/applicants",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobs",
+								"5",
+								"applicants"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "view_specific_job_with_applicantmessage",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/jobs/5/applicants",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"jobs",
+										"5",
+										"applicants"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 13:01:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 4,\n        \"user_id\": 11,\n        \"job_id\": 5,\n        \"message\": \"Degree holder of IT, graduated from TARUMT. Having around 2 year Laravel experiences with React as frontend framework\",\n        \"created_at\": \"2025-07-15T12:52:28.000000Z\",\n        \"updated_at\": \"2025-07-15T12:52:28.000000Z\",\n        \"applicant\": {\n            \"id\": 11,\n            \"name\": \"aptest01\",\n            \"email\": \"aptest01@gmail.com\",\n            \"role\": \"applicant\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2025-07-15T12:13:14.000000Z\",\n            \"updated_at\": \"2025-07-15T12:13:14.000000Z\"\n        }\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "employer_logout",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "employer_logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/logout",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 13:02:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Logout successful\",\n    \"user\": {\n        \"id\": 12,\n        \"email\": \"emtest@gmail.com\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{employer_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		},
@@ -113,68 +1157,808 @@
 				{
 					"name": "login_applicant",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"aptest01@gmail.com\",\r\n  \"password\": \"aptest123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "login_applicant",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"aptest01@gmail.com\",\r\n  \"password\": \"aptest123\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:42:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"32|Fzhaz8VZUyMNlXq3cyMfSD55f9r1fqhofhCjtjqN459a520b\",\n    \"user\": {\n        \"id\": 11,\n        \"name\": \"aptest01\",\n        \"email\": \"aptest01@gmail.com\",\n        \"role\": \"applicant\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2025-07-15T12:13:14.000000Z\",\n        \"updated_at\": \"2025-07-15T12:13:14.000000Z\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "view_jobs_published",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/jobs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobs"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "view_jobs_published",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/jobs",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"jobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:48:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 5,\n        \"user_id\": 12,\n        \"title\": \"Full-Stack Developer\",\n        \"description\": \"Minimun 2 year experience in frontend framework with Laravel backend\",\n        \"location\": \"Johor\",\n        \"salary_range\": \"6000-9000\",\n        \"is_remote\": 1,\n        \"status\": \"published\",\n        \"created_at\": \"2025-07-15T12:27:03.000000Z\",\n        \"updated_at\": \"2025-07-15T12:34:42.000000Z\",\n        \"employer\": {\n            \"id\": 12,\n            \"name\": \"emtest\",\n            \"email\": \"emtest@gmail.com\",\n            \"role\": \"employer\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2025-07-15T12:13:45.000000Z\",\n            \"updated_at\": \"2025-07-15T12:13:45.000000Z\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"user_id\": 3,\n        \"title\": \"developer emp02 title test\",\n        \"description\": \"laravel emp02\",\n        \"location\": \"KL\",\n        \"salary_range\": \"1234\",\n        \"is_remote\": 1,\n        \"status\": \"published\",\n        \"created_at\": \"2025-07-14T16:42:15.000000Z\",\n        \"updated_at\": \"2025-07-14T16:42:15.000000Z\",\n        \"employer\": {\n            \"id\": 3,\n            \"name\": \"emp02\",\n            \"email\": \"emp02@gmail.com\",\n            \"role\": \"employer\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2025-07-14T16:41:29.000000Z\",\n            \"updated_at\": \"2025-07-14T16:41:29.000000Z\"\n        }\n    },\n    {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"title\": \"Developer title test\",\n        \"description\": \"PHP Laravel\",\n        \"location\": \"KL\",\n        \"salary_range\": \"1234\",\n        \"is_remote\": 1,\n        \"status\": \"published\",\n        \"created_at\": \"2025-07-14T16:40:58.000000Z\",\n        \"updated_at\": \"2025-07-14T16:40:58.000000Z\",\n        \"employer\": {\n            \"id\": 1,\n            \"name\": \"emp\",\n            \"email\": \"emp@gmail.com\",\n            \"role\": \"employer\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2025-07-14T16:36:27.000000Z\",\n            \"updated_at\": \"2025-07-14T16:36:27.000000Z\"\n        }\n    }\n]"
+						}
+					]
 				},
 				{
-					"name": "specific_job_details",
+					"name": "specific_job_details(5)",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/jobs/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobs",
+								"5"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "specific_job_details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/jobs/5",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"jobs",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:49:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 5,\n    \"user_id\": 12,\n    \"title\": \"Full-Stack Developer\",\n    \"description\": \"Minimun 2 year experience in frontend framework with Laravel backend\",\n    \"location\": \"Johor\",\n    \"salary_range\": \"6000-9000\",\n    \"is_remote\": 1,\n    \"status\": \"published\",\n    \"created_at\": \"2025-07-15T12:27:03.000000Z\",\n    \"updated_at\": \"2025-07-15T12:34:42.000000Z\",\n    \"employer\": {\n        \"id\": 12,\n        \"name\": \"emtest\",\n        \"email\": \"emtest@gmail.com\",\n        \"role\": \"employer\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2025-07-15T12:13:45.000000Z\",\n        \"updated_at\": \"2025-07-15T12:13:45.000000Z\"\n    }\n}"
+						}
+					]
 				},
 				{
-					"name": "job_apply",
+					"name": "job_apply(ID-5)",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\" : \"Degree holder of IT, graduated from TARUMT. Having around 2 year Laravel experiences with React as frontend framework \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/jobs/5/apply",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jobs",
+								"5",
+								"apply"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "job_apply",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\" : \"Degree holder of IT, graduated from TARUMT. Having around 2 year Laravel experiences with React as frontend framework \"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/jobs/5/apply",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"jobs",
+										"5",
+										"apply"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:52:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Application submitted successfully\",\n    \"application\": {\n        \"user_id\": 11,\n        \"job_id\": 5,\n        \"message\": \"Degree holder of IT, graduated from TARUMT. Having around 2 year Laravel experiences with React as frontend framework\",\n        \"updated_at\": \"2025-07-15T12:52:28.000000Z\",\n        \"created_at\": \"2025-07-15T12:52:28.000000Z\",\n        \"id\": 4\n    }\n}"
+						}
+					]
 				},
 				{
-					"name": "view_own_applicationList",
+					"name": "view_own_applicationList (Applicant)",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/applications/my",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"applications",
+								"my"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "view_own_applicationList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/applications/my",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"applications",
+										"my"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:53:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 4,\n        \"user_id\": 11,\n        \"job_id\": 5,\n        \"message\": \"Degree holder of IT, graduated from TARUMT. Having around 2 year Laravel experiences with React as frontend framework\",\n        \"created_at\": \"2025-07-15T12:52:28.000000Z\",\n        \"updated_at\": \"2025-07-15T12:52:28.000000Z\",\n        \"job\": {\n            \"id\": 5,\n            \"user_id\": 12,\n            \"title\": \"Full-Stack Developer\",\n            \"description\": \"Minimun 2 year experience in frontend framework with Laravel backend\",\n            \"location\": \"Johor\",\n            \"salary_range\": \"6000-9000\",\n            \"is_remote\": 1,\n            \"status\": \"published\",\n            \"created_at\": \"2025-07-15T12:27:03.000000Z\",\n            \"updated_at\": \"2025-07-15T12:34:42.000000Z\"\n        }\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "applicant_logout",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "applicant_logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/logout",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 12:54:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Logout successful\",\n    \"user\": {\n        \"id\": 11,\n        \"email\": \"aptest01@gmail.com\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{applicant_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		},
 		{
 			"name": "register_new_applicant",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"aptest01\", \r\n    \"email\" : \"aptest01@gmail.com\",\r\n    \"password\" : \"aptest123\", \r\n    \"role\" : \"applicant\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "register_new_applicant",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"aptest01\", \r\n    \"email\" : \"aptest01@gmail.com\",\r\n    \"password\" : \"aptest123\", \r\n    \"role\" : \"applicant\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.21"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Jul 2025 12:13:14 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Registered successfully\",\n    \"user\": {\n        \"name\": \"aptest01\",\n        \"email\": \"aptest01@gmail.com\",\n        \"role\": \"applicant\",\n        \"updated_at\": \"2025-07-15T12:13:14.000000Z\",\n        \"created_at\": \"2025-07-15T12:13:14.000000Z\",\n        \"id\": 11\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "register_new_employer",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"emtest\", \r\n    \"email\" : \"emtest@gmail.com\",\r\n    \"password\" : \"emtest123\", \r\n    \"role\" : \"employer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "register_new_employer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"emtest\", \r\n    \"email\" : \"emtest@gmail.com\",\r\n    \"password\" : \"emtest123\", \r\n    \"role\" : \"employer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.21"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Jul 2025 12:13:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Registered successfully\",\n    \"user\": {\n        \"name\": \"emtest\",\n        \"email\": \"emtest@gmail.com\",\n        \"role\": \"employer\",\n        \"updated_at\": \"2025-07-15T12:13:45.000000Z\",\n        \"created_at\": \"2025-07-15T12:13:45.000000Z\",\n        \"id\": 12\n    }\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "employer_token",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "applicant_token",
+			"value": "",
+			"type": "default"
 		}
 	]
 }

@@ -71,6 +71,11 @@ It contains:
 - Job CRUD (Employer)
 - Application submission/view (Applicant)
 
+> Import this file into Postman to test all endpoints easily.
+> After request name "show_employer_joblist_after_delete+edit" (Employer), 
+    go through the Applicant part for applying job, 
+    then you will see the rest of Employer request for showing the applied record of employer's job. 
+
 ---
 
 By Weng Wai (Sean)
